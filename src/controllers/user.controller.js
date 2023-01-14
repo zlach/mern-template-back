@@ -5,9 +5,8 @@ import pick from 'lodash/pick.js';
 
 import UserService from '../services/user.service.js';
 import logger from '../utils/logger.js';
-import { createSchema, updateSchema, patchSchema }  from '../schemata/user.schema.js';
+import { createSchema, /*updateSchema,*/ patchSchema }  from '../schemata/user.schema.js';
 import runJoi from '../utils/validation.js';
-import { parseBoolean } from '../utils/formatting.js';
 
 const _fields = [
   'cognitoId', 'email', 'isConfirmed', 'name', 'username', 'profilePicUrl'

@@ -8,7 +8,6 @@ const createSchema = Joi.object({
     .guid()
     .required(),
   name: customJoi.string()
-    .trim()
     .max(50)
     .min(1)
     .notWhitespace()
@@ -19,7 +18,6 @@ const createSchema = Joi.object({
     .allow(null, '')
     .optional(),
   username: customJoi.string()
-    .trim()
     .max(14)
     .min(5)
     .notWhitespace()
@@ -39,7 +37,6 @@ const patchSchema = Joi.object({
     .guid()
     .optional(),
   name: customJoi.string()
-    .trim()
     .max(50)
     .min(1)
     .notWhitespace()
@@ -50,7 +47,6 @@ const patchSchema = Joi.object({
     .allow(null, '')
     .optional(),
   username: customJoi.string()
-    .trim()
     .max(14)
     .min(5)
     .notWhitespace()

@@ -11,18 +11,15 @@ const createSchema = Joi.object({
     .objectId()
     .required(),
   line1: customJoi.string()
-    .trim()
     .notWhitespace()
     .max(50)
     .required(),
   line2: customJoi.string()
-    .trim()
     .notWhitespace()
     .allow(null, '')
     .max(50)
     .optional(),
   city: customJoi.string()
-    .trim()
     .notWhitespace()
     .max(50)
     .required(),
@@ -41,18 +38,15 @@ const patchSchema = Joi.object({
     .objectId()
     .optional(),
   line1: customJoi.string()
-    .trim()
     .notWhitespace()
     .max(50)
     .optional(),
   line2: customJoi.string()
-    .trim()
     .notWhitespace()
     .allow(null, '')
     .max(50)
     .optional(),
   city: customJoi.string()
-    .trim()
     .notWhitespace()
     .max(50)
     .optional(),

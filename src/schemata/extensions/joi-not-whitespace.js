@@ -10,9 +10,7 @@ export default joi => ({
   rules: {
     notWhitespace: {
       validate(value, { error }) {
-        const isValid = !isEmpty(trim(value));
-
-        if (!isValid) {
+        if (isEmpty(trim(value))) {
           return error('string.error')
         }
 

@@ -1,5 +1,4 @@
 import pkg from 'validator';
-import { convertToObjectId } from '../../utils/formatting.js';
 
 const { isMongoId } = pkg;
 
@@ -18,7 +17,7 @@ export default joi => ({
           return error('string.error')
         }
 
-        return convertToObjectId(value);
+        return value;
       }
     }
   }

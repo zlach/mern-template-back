@@ -53,9 +53,9 @@ const AddressController = {
     const data = _getDataFromBody(body);
 
     try {
-      const cleanData = runJoi(data, createSchema);
+      runJoi(data, createSchema);
 
-      const request = await AddressService.create(cleanData, user);
+      const request = await AddressService.create(data, user);
 
       logger.info('SUCCESS: AddressController.create');
       return res.status(StatusCodes.CREATED).json(request);
@@ -72,9 +72,9 @@ const AddressController = {
     const data = _getDataFromBody(body);
 
     try {
-      const cleanData = runJoi(data, updateSchema);
+      runJoi(data, updateSchema);
 
-      const request = await AddressService.update(id, cleanData, user);
+      const request = await AddressService.update(id, data, user);
 
       logger.info('SUCCESS: AddressController.update');
       return res.status(StatusCodes.OK).json(request);
@@ -91,9 +91,9 @@ const AddressController = {
     const data = _getDataFromBody(body);
 
     try {
-      const cleanData = runJoi(data, patchSchema);
+      runJoi(data, patchSchema);
 
-      const request = await AddressService.patch(id, cleanData, user);
+      const request = await AddressService.patch(id, data, user);
 
       logger.info('SUCCESS: AddressController.patch');
       return res.status(StatusCodes.OK).json(request);

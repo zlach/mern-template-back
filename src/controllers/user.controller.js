@@ -40,9 +40,9 @@ const UserController = {
     const data = _getDataFromBody(body);
 
     try {
-      const cleanData = runJoi(data, createSchema);
+      runJoi(data, createSchema);
 
-      const response = await UserService.create(cleanData, user);
+      const response = await UserService.create(data, user);
 
       return res.status(StatusCodes.OK).json(response);
     } catch (err) {
@@ -58,9 +58,9 @@ const UserController = {
     const data = _getDataFromBody(body)
 
     try {
-      const cleanData = runJoi(data, patchSchema);
+      runJoi(data, patchSchema);
 
-      const user = await UserService.patch(id, cleanData, reqUser);
+      const user = await UserService.patch(id, data, reqUser);
 
       logger.info('SUCCESS: UserController.patch');
       return res.status(StatusCodes.OK).json(user);

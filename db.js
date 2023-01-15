@@ -1,9 +1,10 @@
 import mongoose from 'mongoose';
 import logger from './src/utils/logger.js';
 
-const connectDB = async () => {
+const connectDB = () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI);
+    mongoose.set('strictQuery', true)
+    mongoose.connect(process.env.MONGODB_URI);
 
     logger.info('MongoDB Connected...');
   } catch (err) {

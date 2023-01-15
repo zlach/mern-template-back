@@ -5,7 +5,7 @@ import isEmpty from 'lodash/isEmpty.js';
 
 import User from '../models/user.model.js';
 import CustomError from '../utils/custom-error.js';
-import { UserCheckStatuses, UserRoles } from '../utils/constants.js';
+import { UserRoles } from '../utils/constants.js';
 import { convertToObjectId } from '../utils/formatting.js';
 
 const { isUUID, isMongoId } = pkg;

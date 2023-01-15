@@ -61,7 +61,7 @@ const UserController = {
 
       const response = await UserService.create(data, user);
 
-      return res.status(StatusCodes.OK).json('response');
+      return res.status(StatusCodes.OK).json(response);
     } catch (err) {
       logger.info('ERROR: UserController.create');
 
